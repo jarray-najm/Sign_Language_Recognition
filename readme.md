@@ -18,6 +18,16 @@ Key components of Sign Language Recognition systems include:
 
 Sign Language Recognition technology has the potential to enhance accessibility and inclusion for individuals with hearing impairments in various domains, including education, employment, and social interactions.
 
+## Images
+
+<img src="./Test/X.jpg" alt="Image 1" width="500">
+<img src="./Test/forX.png" alt="Image 2" width="500">
+<img src="./Test/P.jpg" alt="Image 3" width="500">
+<img src="./Test/forP.png" alt="Image 4" width="500">
+
+
+
+
 ## Installation
 
 1. Clone this repository to your local machine:

@@ -9,8 +9,15 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 # Load the trained model
-model = load_model('../Models/Model_Sign_Language_MNIST.h5')
 
+# Get the current directory of the script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Define the path to the model file relative to the current directory
+model_file = os.path.join(
+    current_dir, '../Models/Model_Sign_Language_MNIST.h5')
+# Load the trained model
+model = load_model(model_file)
 # Initialize MediaPipe Hands
 mphands = mp.solutions.hands
 hands = mphands.Hands()
@@ -77,13 +84,12 @@ while True:
                 if value == high1:
                     print("Predicted Character 1: ", key)
                     print('Confidence 1: ', 100 * value)
-                    #  delete #  for nest 6 line for display top 3 Predicted
-                # elif value == high2:
-                #     print("Predicted Character 2: ", key)
-                #     print('Confidence 2: ', 100 * value)
-                # elif value == high3:
-                #     print("Predicted Character 3: ", key)
-                #     print('Confidence 3: ', 100 * value)
+                elif value == high2:
+                    print("Predicted Character 2: ", key)
+                    print('Confidence 2: ', 100 * value)
+                elif value == high3:
+                    print("Predicted Character 3: ", key)
+                    print('Confidence 3: ', 100 * value)
 
     # Display the frame
     cv2.imshow("Frame", frame)
@@ -95,7 +101,6 @@ while True:
         break
     elif k % 256 == 32:  # SPACE pressed
         time.sleep(5)
-    time.sleep(2)
 
 
 # Release the camera and close all OpenCV windows
